@@ -1,4 +1,6 @@
 1. Transfer Money
-- Choose an account by writing
 2. Store Money
 3. Withdraw Money
+- Choose accounts by writing
+- Specify a money amount 
+- Make sure the correct types of accounts are selectable at the correct time
