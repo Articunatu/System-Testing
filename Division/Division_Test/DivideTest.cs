@@ -12,10 +12,10 @@ namespace Division_Test
         {
             Math math = new Math();
 
-            int appResult = math.Divide(95, 5);
+            int quota = math.Divide(95, 5);
             int expectedResult = 19;
 
-            Assert.AreEqual(appResult, expectedResult);
+            Assert.AreEqual(quota, expectedResult);
 
         }
 
@@ -25,10 +25,10 @@ namespace Division_Test
         {
             Math math = new Math();
 
-            int appResult = math.Divide(144, -12);
+            int quota = math.Divide(144, -12);
             int expectedResult = -12;
 
-            Assert.AreEqual(appResult, expectedResult);
+            Assert.AreEqual(quota, expectedResult);
         }
     }
 }
