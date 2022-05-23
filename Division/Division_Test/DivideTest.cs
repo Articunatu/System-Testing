@@ -8,12 +8,12 @@ namespace Division_Test
     {
         [TestMethod]
         [Priority(1)]
-        public void GetRest_Numerator_95_And_Denomiator_5_Return_0()
+        public void GetRest_Numerator_95_And_Denomiator_5_Return_14()
         {
             Math math = new Math();
 
             int appResult = math.Divide(95, 5);
-            int expectedResult = 0;
+            int expectedResult = 19;
 
             Assert.AreEqual(appResult, expectedResult);
 
@@ -21,12 +21,12 @@ namespace Division_Test
 
         [TestMethod]
         [Priority(2)]
-        public void GetRest_Numerator_144_And_Denomiator_Negative12_Return_0()
+        public void GetRest_Numerator_144_And_Denomiator_Negative12_Return_Negative12()
         {
             Math math = new Math();
 
             int appResult = math.Divide(144, -12);
-            int expectedResult = 0;
+            int expectedResult = -12;
 
             Assert.AreEqual(appResult, expectedResult);
         }

@@ -8,7 +8,7 @@ namespace Division_App
     {
         public int Divide(int numerator, int denomiator)
         {
-            int result = numerator % denomiator;
+            int result = numerator / denomiator;
             return result;
         }
     }
