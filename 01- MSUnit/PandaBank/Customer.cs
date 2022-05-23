@@ -5,6 +5,7 @@ namespace PandaBank
 {
     partial class Customer : LoginUser
     {
+        #region Other
         public List<Accounts> ListOfAccounts = new List<Accounts>();
 
         public void AddAccounts(Accounts _Account)
@@ -41,7 +42,7 @@ namespace PandaBank
                 item.PrintAccountName();
             }
         }
-
+        #endregion
         public void TransferAccounts()
         {
             Console.ForegroundColor = ConsoleColor.Green;
