@@ -4,3 +4,7 @@
 - Choose accounts by writing
 - Specify a money amount 
 - Make sure the correct types of accounts are selectable at the correct time
+///Takes to many user inuts
+instead --> 
+1. Exchange Rate for different currencies
+2. Calculate transcations with fake parameters
