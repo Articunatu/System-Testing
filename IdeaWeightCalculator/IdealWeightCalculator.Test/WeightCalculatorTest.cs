@@ -34,7 +34,7 @@ namespace IdealWeightCalculator.Test
 
         /////Given_When_Then
         //[TestMethod]
-        //[Description("This test about checking if ideal body weight" + "Of man with 180 cn us equal to 72.5")]
+        //[Description("This test about checking if ideal body weight" + "Of man with 180 cm is equal to 72.5")]
         //[Owner("Anas")]
         //[Priority(1)]
         //[TestCategory("WeightCategory")]
