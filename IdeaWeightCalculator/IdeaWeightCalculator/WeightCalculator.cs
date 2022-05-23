@@ -22,5 +22,20 @@ namespace IdeaWeightCalculator
                     throw new ArgumentException("The Gender is not Valid!");
             }
         }
+
+        public List<double> GetIdealBodyFromDS()
+        {
+            List<double> result = new List<double>();
+
+            var repo = new WeightRepository();
+            var weights = repo.GetWeights();
+
+            foreach (var weight in weights)
+            {
+                result.Add(weight.GetIdealBodyWeight());
+            }
+
+            return result;
+        }
     }
 }
