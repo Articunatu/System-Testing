@@ -112,21 +112,21 @@ namespace PandaBank
             }
 
             ///Calculations and display before the timer was implemented
-            //account._Balance -= moneyamount;
-            //account._Balance = (float)Math.Round(account._Balance, 3);
-            //account2._Balance += (float)ExchangeRate(account, account2, moneyamount);
-            //account2._Balance = (float)Math.Round(account2._Balance, 3);
+            account._Balance -= moneyamount;
+            account._Balance = (float)Math.Round(account._Balance, 3);
+            account2._Balance += (float)ExchangeRate(account, account2, moneyamount);
+            account2._Balance = (float)Math.Round(account2._Balance, 3);
 
-            //Console.ForegroundColor = ConsoleColor.DarkCyan;
-            //Console.WriteLine("Uppdaterad info:");
-            //account.PrintInfo();
-            //account2.PrintInfo();
-
-            SaveCalculations(moneyamount, (float)ExchangeRate(account, account2, moneyamount), account, account2);
-            SaveTranscation(moneyamount, account, false, $"Överföring till annat konto: {account2._Name}");
-            SaveTranscation((float)ExchangeRate(account, account2, moneyamount), account2, true, $"Överföring från annat konto: {account._Name}");
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.WriteLine("Transaktionerna går egenom om 15 sekunder.");
+            Console.WriteLine("Uppdaterad info:");
+            account.PrintInfo();
+            account2.PrintInfo();
+
+            //SaveCalculations(moneyamount, (float)ExchangeRate(account, account2, moneyamount), account, account2);
+            //SaveTranscation(moneyamount, account, false, $"Överföring till annat konto: {account2._Name}");
+            //SaveTranscation((float)ExchangeRate(account, account2, moneyamount), account2, true, $"Överföring från annat konto: {account._Name}");
+            //Console.ForegroundColor = ConsoleColor.DarkCyan;
+            //Console.WriteLine("Transaktionerna går egenom om 15 sekunder.");
         }
 
         public void TransferMoneyToUser(List<Customer> ListUser)
