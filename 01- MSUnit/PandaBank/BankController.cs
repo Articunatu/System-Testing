@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PandaBank
 {
-    struct BankController
+    public class BankController
     {
         internal void Start()
         {

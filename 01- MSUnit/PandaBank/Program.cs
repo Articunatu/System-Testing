@@ -2,7 +2,7 @@
 
 namespace PandaBank
 {
-    struct Program
+    class Program
     {
         static void Main()
         {
