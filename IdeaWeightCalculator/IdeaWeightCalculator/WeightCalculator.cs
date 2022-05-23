@@ -19,7 +19,7 @@ namespace IdeaWeightCalculator
                 case 'f':
                     return (Height - 100) - ((Height - 150) / 2);
                 default:
-                    return 0;
+                    throw new ArgumentException("The Gender is not Valid!");
             }
         }
     }
