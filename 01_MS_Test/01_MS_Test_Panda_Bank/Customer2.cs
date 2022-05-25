@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace PandaBank
+namespace _01_MS_Test_Panda_Bank
 {
-    partial class Customer : LoginUser
+    public partial class Customer : LoginUser
     {
         #region Other
         List<string> Transactions = new List<string>();

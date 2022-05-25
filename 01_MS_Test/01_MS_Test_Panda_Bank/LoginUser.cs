@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace PandaBank
+namespace _01_MS_Test_Panda_Bank
 {
     public class LoginUser
     {

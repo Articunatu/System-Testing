@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace PandaBank
+namespace _01_MS_Test_Panda_Bank
 {
-    partial class Customer : LoginUser
+    public partial class Customer : LoginUser
     {
         #region Other
         public List<Accounts> ListOfAccounts = new List<Accounts>();

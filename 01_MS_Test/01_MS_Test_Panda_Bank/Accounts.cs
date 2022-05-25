@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PandaBank
+namespace _01_MS_Test_Panda_Bank
 {
     public class Accounts
     {

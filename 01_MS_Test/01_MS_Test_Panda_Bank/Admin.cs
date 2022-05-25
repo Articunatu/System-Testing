@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace PandaBank
+namespace _01_MS_Test_Panda_Bank
 {
     public class Admin : LoginUser
     {

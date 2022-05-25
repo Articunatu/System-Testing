@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace PandaBank
+namespace _01_MS_Test_Panda_Bank
 {
-    class Program
+    public class Program
     {
         static void Main()
         {
