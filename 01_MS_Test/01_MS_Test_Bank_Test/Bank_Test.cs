@@ -16,8 +16,9 @@ namespace _01_MS_Test_Bank_Test
 
             Accounts first = customer.ListOfAccounts[0];
             Accounts second = customer.ListOfAccounts[1];
-            ///EUR       ///SEK
+                                              ///EUR       ///SEK
             decimal expectedRate = 10000 * (0.097629977M / 1.00M); ///976.29977
+
             decimal actualRate = a.ListOfCustomers[0].ExchangeRate(first, second, 10000);
 
             Assert.AreEqual(expectedRate, actualRate);
@@ -28,23 +29,16 @@ namespace _01_MS_Test_Bank_Test
         {
             Calculation expected = new Calculation
             {
-                RecieveAmount = 4000F,
-                SendAmount = 5000F,
-            };
-            List<float> expectedValues = new List<float>()
-            {
-                expected.RecieveAmount, expected.SendAmount
+                RecieveAmount = 4000,
+                SendAmount = 5000,
             };
 
             Customer customer = new Customer(null, null);
             customer.SaveCalculations(5000, 4000, null, null);
             Calculation actual = BankController.queuedCalculations.Peek();
-            List<float> actualValues = new List<float>()
-            {
-                actual.RecieveAmount, actual.SendAmount
-            };
 
-            Assert.AreEqual(expectedValues, actualValues);
+            Assert.AreEqual(expected.RecieveAmount, actual.RecieveAmount);
+            Assert.AreEqual(expected.SendAmount, 646546);
         }
     }
 }
