@@ -1,5 +1,6 @@
 using _01_MS_Test_Panda_Bank;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 
 namespace _01_MS_Test_Bank_Test
 {
@@ -12,7 +13,7 @@ namespace _01_MS_Test_Bank_Test
             Admin a = new Admin();
             a.AdminSetup();
             Customer customer = a.ListOfCustomers[0];
-            
+
             Accounts first = customer.ListOfAccounts[0];
             Accounts second = customer.ListOfAccounts[1];
             ///EUR       ///SEK
@@ -23,9 +24,27 @@ namespace _01_MS_Test_Bank_Test
         }
 
         [TestMethod]
-        public void Lopen()
+        public void GetSaveCalculation_When()
         {
-            
+            Calculation expected = new Calculation
+            {
+                RecieveAmount = 4000F,
+                SendAmount = 5000F,
+            };
+            List<float> expectedValues = new List<float>()
+            {
+                expected.RecieveAmount, expected.SendAmount
+            };
+
+            Customer customer = new Customer(null, null);
+            customer.SaveCalculations(5000, 4000, null, null);
+            Calculation actual = BankController.queuedCalculations.Peek();
+            List<float> actualValues = new List<float>()
+            {
+                actual.RecieveAmount, actual.SendAmount
+            };
+
+            Assert.AreEqual(expectedValues, actualValues);
         }
     }
 }

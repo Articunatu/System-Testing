@@ -6,7 +6,6 @@ namespace _01_MS_Test_Panda_Bank
 {
     public partial class Customer : LoginUser
     {
-        #region Other
         List<string> Transactions = new List<string>();
 
         public void SaveTranscation(float moneyAmount, Accounts transferAccount, bool plusOrMinus, string changedTransfer)
@@ -69,7 +68,6 @@ namespace _01_MS_Test_Panda_Bank
             ListOfAccounts.Add(createAccounts);
             Console.WriteLine(createAccounts._Name + " " + createAccounts._Balance + " " + createAccounts._Currency);
         }
-        #endregion
         public void DepositMoney()
         {
             ShoweAccounts();
