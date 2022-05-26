@@ -8,3 +8,8 @@
 instead --> 
 1. Exchange Rate for different currencies
 2. Save a calculation with fake parameters
+The original functions all requiered inputs from the user, in the form of Console.ReadLine(),
+thus they were excluded from the test project. Instead the functions to be tested are 
+ExchangeRate and SaveCalculations, since they are the only funcions free from user inputs.
+
+The first tests check if the ExchangeRate can perform the decimal division accordingly, w
