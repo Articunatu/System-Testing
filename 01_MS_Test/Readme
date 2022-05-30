@@ -12,4 +12,16 @@ The original functions all requiered inputs from the user, in the form of Consol
 thus they were excluded from the test project. Instead the functions to be tested are 
 ExchangeRate and SaveCalculations, since they are the only funcions free from user inputs.
 
-The first tests check if the ExchangeRate can perform the decimal division accordingly, w
+The first tests check if the ExchangeRate can perform the decimal division correctly, w
+Then the test should always fail if any number is negative, since no negative values can be used in an actual bank.
+Potential flaws with the first tests:
+- Make sure that the expected division is 100% correct (obviously)
+- That you access the correct accounts from the correct customer(s), otherwise you won't get the correct currency.
+- The test method name is over 100 characters long...
+  (public void *GetExchangeRate_When_SendCurrency_SEK_And_RecieveCurrency_EUR_And_MoneyAmount_10000_With_Result_976_2997*)
+
+The second tests makes sure that the method SaveCalculation actually adds an object to the queue of calculation objects, 
+and not just a null reference.
+Potential flaws with the second tests:
+- The parameters for the SaveCalculation function needs to fully match
+- The arguments for the account are all null, which shouldn't matter in the context, but COULD be a problem when running the actual function. 
