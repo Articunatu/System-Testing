@@ -16,6 +16,7 @@ The first tests check if the ExchangeRate can perform the decimal division corre
 Then the test should always fail if any number is negative, since no negative values can be used in an actual bank.
 Potential flaws with the first tests:
 - Make sure that the expected division is 100% correct (obviously)
+- That you access the correct accounts from the correct customer(s), otherwise you won't get the correct currency.
 - The test method name is over 100 characters long...
   (public void *GetExchangeRate_When_SendCurrency_SEK_And_RecieveCurrency_EUR_And_MoneyAmount_10000_With_Result_976_2997*)
 
