@@ -14,8 +14,8 @@ namespace _01_MS_Test_Panda_Bank
 
         Accounts a1 = new Accounts("Spar", 50000.00f, "SEK");
         Accounts a2 = new Accounts("Lön", 20000f, "EUR");
-        Accounts a3 = new Accounts("Fond", 30000.00f, "SEK");
-        Accounts a4 = new Accounts("Aktie", 10000.00f, "SEK");
+        Accounts a3 = new Accounts("Fond", 30000.00f, "GBP");
+        Accounts a4 = new Accounts("Aktie", 10000.00f, "USD");
         Accounts a5 = new Accounts("Privat", 4000.66f, "SEK");
         Accounts a6 = new Accounts("Investeringar", 99999.02f, "SEK");
         #endregion
