@@ -1,6 +1,5 @@
 using _01_MS_Test_Panda_Bank;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
 
 namespace _01_MS_Test_Bank_Test
 {
@@ -15,12 +14,12 @@ namespace _01_MS_Test_Bank_Test
             a.AdminSetup();
             Customer customer = a.ListOfCustomers[0];
 
-            Accounts first = customer.ListOfAccounts[0];
-            Accounts second = customer.ListOfAccounts[1];
+            Accounts send = customer.ListOfAccounts[0];
+            Accounts recieve = customer.ListOfAccounts[1];
                                               ///EUR       ///SEK
             decimal expectedRate = 10000 * (0.097629977M / 1.00M); ///976.29977
 
-            decimal actualRate = a.ListOfCustomers[0].ExchangeRate(first, second, 10000);
+            decimal actualRate = a.ListOfCustomers[0].ExchangeRate(send, recieve, 10000);
 
             Assert.AreEqual(expectedRate, actualRate);
         }
@@ -33,37 +32,37 @@ namespace _01_MS_Test_Bank_Test
             a.AdminSetup();
             Customer customer = a.ListOfCustomers[1];
 
-            Accounts first = customer.ListOfAccounts[1];
-            Accounts second = customer.ListOfAccounts[0];
+            Accounts send = customer.ListOfAccounts[1];
+            Accounts recieve = customer.ListOfAccounts[0];
             ///EUR       ///SEK
-            decimal expectedRate = (decimal)999.45F * (0.11025802M / 0.083344351M); ///1322.19373 
+            decimal expectedRate = 999.45M * (0.11025802M / 0.083344351M); ///1322.19373 
 
-            decimal actualRate = a.ListOfCustomers[0].ExchangeRate(first, second, (float)999.45M);
+            decimal actualRate = a.ListOfCustomers[0].ExchangeRate(send, recieve, 999.45f);
 
-            Assert.AreEqual(expectedRate, actualRate);
+            Assert.AreEqual(decimal.Round(expectedRate, 5), decimal.Round(actualRate, 5));
         }
-
+        
         [TestMethod]
-        [Priority(1)]
+        [Priority(2)]
         public void GetExchangeRate_When_SendCurrency_SEK_And_RecieveCurrency_SEK_And_MoneyAmount_587_With_Result_587()
         {
             Admin a = new Admin();
             a.AdminSetup();
-            Customer customer = a.ListOfCustomers[1];
+            Customer customer = a.ListOfCustomers[2];
 
-            Accounts first = customer.ListOfAccounts[1];
-            Accounts second = customer.ListOfAccounts[0];
+            Accounts send = customer.ListOfAccounts[0];
+            Accounts recieve = customer.ListOfAccounts[1];
             ///EUR       ///SEK
-            decimal expectedRate = 999.45M * (0.11025802M / 0.083344351M); ///1322.19373 
+            decimal expectedRate = 587 * (1 / 1); ///1322.19373 
 
-            decimal actualRate = a.ListOfCustomers[0].ExchangeRate(first, second, 999.45f);
+            decimal actualRate = a.ListOfCustomers[0].ExchangeRate(send, recieve, 587);
 
             Assert.AreEqual(expectedRate, actualRate);
         }
 
         [TestMethod]
-        [Priority(2)]
-        public void GetSaveCalculation_When()
+        [Priority(3)]
+        public void GetSaveCalculation_When_RecieveAmount_4000_And_SendAmount_5000()
         {
             Calculation expected = new Calculation
             {
@@ -80,17 +79,17 @@ namespace _01_MS_Test_Bank_Test
         }
 
         [TestMethod]
-        [Priority(2)]
-        public void GetSaveCalculation_When_3()
+        [Priority(3)]
+        public void GetSaveCalculation_When_RecieveAmount_789_78_And_SendAmount_1562_394()
         {
             Calculation expected = new Calculation
             {
-                RecieveAmount = 4000,
-                SendAmount = 5000,
+                RecieveAmount = 789.78f,
+                SendAmount = 1562.394f,
             };
 
             Customer customer = new Customer(null, null);
-            customer.SaveCalculations(5000, 4000, null, null);
+            customer.SaveCalculations(1562.394f, 789.78f, null, null);
             Calculation actual = BankController.queuedCalculations.Peek();
 
             Assert.AreEqual(expected.RecieveAmount, actual.RecieveAmount);
