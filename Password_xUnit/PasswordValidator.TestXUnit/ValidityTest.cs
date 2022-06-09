@@ -29,12 +29,12 @@ namespace PasswordValidator.TestXUnit
         }
 
         [Theory]
-        [InlineData("Pwbdudald25123%", true)]
-        [InlineData("ewrhu5234", true)]
-        [InlineData("Fake password", true)]
-        [InlineData("Fake password", false)]
-        [InlineData("Rea234€]$¤password", true)]
-        public void ValidatePasswordTheory(string password, bool result)
+        [InlineData("Pwbdudald25123%", true, 1)]
+        [InlineData("ewrhu5234", true, 2)]
+        [InlineData("Fake password", true, 5)]
+        [InlineData("Fake password", false, 8)]
+        [InlineData("Rea234€]$¤password", true, 9)]
+        public void ValidatePasswordTheory(string password, bool result, int number)
         {
             var passwordValidator = new PasswordValidation();
             bool isValid = passwordValidator.IsValid(password);
