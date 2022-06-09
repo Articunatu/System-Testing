@@ -30,14 +30,16 @@ namespace Division_xUnit_Test
         }
 
         [Theory]
-        [InlineData(95,5)]
-        [InlineData(144, 12)]
-        [InlineData(-30, 6)]
-        [InlineData(88, -2)]
-        [InlineData(-249, -3)]
-        public void DivisionTheoery(int numerator, int denomiator)
+        [InlineData(95,5, 19)]
+        [InlineData(144, 12, 12)]
+        [InlineData(-30, 6, -5)]
+        [InlineData(88, -2, -44)]
+        [InlineData(-249, -3, 83)]
+        public void DivisionTheoery(int numerator, int denomiator, int expectedQuotient)
         {
-            var actual = division.Divide(numerator, denomiator);
+            var actualQuotient = division.Divide(numerator, denomiator);
+
+            Assert.Equal(expectedQuotient, actualQuotient);
         }
     }
 }
