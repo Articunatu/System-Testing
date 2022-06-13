@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace XUnit_Calculator
+namespace _03___XUnit_and_Acceptance_testing
 {
     public class Calculator
     {
@@ -49,6 +49,15 @@ namespace XUnit_Calculator
             calculations.Add(division);
 
             return quotend;
+        }
+
+        public void History()
+        {
+            foreach (var item in calculations)
+            {
+                Console.WriteLine(item.ToString());
+                Console.WriteLine();
+            }
         }
     }
 }
