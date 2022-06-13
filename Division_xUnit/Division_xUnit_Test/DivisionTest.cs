@@ -35,7 +35,7 @@ namespace Division_xUnit_Test
         [InlineData(-30, 6, -5)]
         [InlineData(88, -2, -44)]
         [InlineData(-249, -3, 83)]
-        public void DivisionTheoery(int numerator, int denomiator, int expectedQuotient)
+        public void DivisionTheory(int numerator, int denomiator, int expectedQuotient)
         {
             var actualQuotient = division.Divide(numerator, denomiator);
 
