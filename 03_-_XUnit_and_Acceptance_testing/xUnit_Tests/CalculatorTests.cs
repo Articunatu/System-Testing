@@ -1,5 +1,6 @@
 using _03___XUnit_and_Acceptance_testing;
 using System;
+using System.Text;
 using Xunit;
 
 namespace xUnit_Tests
@@ -48,6 +49,18 @@ namespace xUnit_Tests
             Assert.Equal(-4, diffResult);
         }
 
+        [Theory]
+        [InlineData(3, 5, 8)]
+        [InlineData(1, -6, -5)]
+        public void Saved_Calulation_Theory(int augend, int addend, int sum)
+        {
+            Calculator saveCalc = new Calculator();
 
+            saveCalc.Addition(augend, addend);
+            StringBuilder actualHistory = saveCalc.calculations[0];
+            string expectedHistory = $"{augend} + {addend} = {sum}";
+
+            Assert.Equal(expectedHistory, actualHistory.ToString());
+        }
     }
 }

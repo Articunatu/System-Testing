@@ -41,9 +41,9 @@ namespace _03___XUnit_and_Acceptance_testing
         static void LoadMenu()
         {
 
-            Console.WriteLine("\nVill du beräkna något mer, svara JA eller NEJ");
+            Console.WriteLine("\nVill du stänga av miniräknaren, skriv NEJ");
             string answer = Console.ReadLine();
-            if (answer.ToUpper() == "JA")
+            if (answer.ToUpper() != "NEJ")
             {
                 Console.Clear();
                 Menu();
@@ -112,7 +112,7 @@ namespace _03___XUnit_and_Acceptance_testing
             DivisionResult(dividend, divisor, quotend);
         }
 
-        private static void DivisionResult(int dividend, int divisor, int quotend)
+        public static void DivisionResult(int dividend, int divisor, int quotend)
         {
             Console.WriteLine($"Kvotet mellan täljaren {dividend} och nämnaren {divisor} är {quotend}!");
             LoadMenu();
@@ -120,7 +120,7 @@ namespace _03___XUnit_and_Acceptance_testing
 
         static void HistoryCalculations()
         {
-            Console.WriteLine("\nTidigare beräkningar:");
+            Console.WriteLine("\nTidigare beräkningar:\n");
             calculator.History();
             Console.ReadLine();
             LoadMenu();
