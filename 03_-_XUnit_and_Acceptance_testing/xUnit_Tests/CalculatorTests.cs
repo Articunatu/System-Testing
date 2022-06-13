@@ -1,5 +1,4 @@
 using _03___XUnit_and_Acceptance_testing;
-using System;
 using System.Text;
 using Xunit;
 
@@ -54,6 +53,7 @@ namespace xUnit_Tests
         [InlineData(1, -6, -5)]
         public void Saved_Calulation_Theory(int augend, int addend, int sum)
         {
+            ///New assert
             Calculator saveCalc = new Calculator();
 
             saveCalc.Addition(augend, addend);
@@ -61,6 +61,17 @@ namespace xUnit_Tests
             string expectedHistory = $"{augend} + {addend} = {sum}";
 
             Assert.Equal(expectedHistory, actualHistory.ToString());
+        }
+
+        [Fact]
+        public void OutputResults()
+        {
+            App app = new App();
+
+            string expected = "Summan av termerna 3 och 7 är 10!";
+            string actual = app.AdditionResult(3, 7, 10);
+
+            Assert.Equal(expected, actual);
         }
     }
 }
