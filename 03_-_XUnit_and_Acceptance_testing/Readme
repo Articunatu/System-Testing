@@ -1,8 +1,8 @@
-Intructions for acceptance test:
+# Intructions for acceptance test:
 
 1st Test: Addition
-* Open the application named "03_-_XUnit_and_Acceptance_testing"
-*Welcome message from the console window, says that only integers work with this calculator
+-Open the application named "03_-_XUnit_and_Acceptance_testing"
+-Welcome message from the console window, says that only integers work with this calculator
 *The console window asks what you want to calculate, with options printed out
 *Press the following key choose subtraction: +
 *Press the ENTER key
