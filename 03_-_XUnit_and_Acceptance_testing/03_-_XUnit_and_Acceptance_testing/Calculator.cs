@@ -63,10 +63,16 @@ namespace _03___XUnit_and_Acceptance_testing
         public int AdditionMulti(int augend, int[] addends)
         {
             int sum = augend;
+            string text = $"{augend}";
             foreach (int addend in addends)
             {
                 sum += addend;
+                text += $" + {addend}";
             }
+            text += $" = {sum}";
+            StringBuilder addition = new StringBuilder();
+            addition.Append(text);
+            calculations.Add(addition);
             return sum;
         }
 
