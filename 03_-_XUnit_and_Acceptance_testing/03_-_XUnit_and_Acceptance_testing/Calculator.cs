@@ -59,5 +59,45 @@ namespace _03___XUnit_and_Acceptance_testing
                 Console.WriteLine();
             }
         }
+
+        public int AdditionMulti(int augend, int[] addends)
+        {
+            int sum = augend;
+            foreach (int addend in addends)
+            {
+                sum += addend;
+            }
+            return sum;
+        }
+
+        public int SubtractionMulti(int minuend, int[] subtrahends)
+        {
+            int difference = minuend;
+            foreach (int subtrahend in subtrahends)
+            {
+                difference -= subtrahend;
+            }
+            return difference;
+        }
+
+        public int MultiplicationMulti(int multiplicand, int[] multipliers)
+        {
+            int product = multiplicand;
+            foreach (int multiplier in multipliers)
+            {
+                product *= multiplier;
+            }
+            return product;
+        }
+
+        public int DivisionMulti(int dividend, int[] divisors)
+        {
+            int quotend = dividend;
+            foreach (int divisor in divisors)
+            {
+                quotend /= divisor;
+            }
+            return quotend;
+        }
     }
 }

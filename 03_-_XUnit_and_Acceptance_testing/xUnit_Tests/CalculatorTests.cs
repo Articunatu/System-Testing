@@ -57,9 +57,12 @@ namespace xUnit_Tests
             Calculator saveCalc = new Calculator();
 
             saveCalc.Addition(augend, addend);
+
+
             StringBuilder actualHistory = saveCalc.calculations[0];
             string expectedHistory = $"{augend} + {addend} = {sum}";
 
+            Assert.NotNull(actualHistory);
             Assert.Equal(expectedHistory, actualHistory.ToString());
         }
 

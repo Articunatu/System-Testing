@@ -31,7 +31,7 @@ namespace _03___XUnit_and_Acceptance_testing
                 case "*": MultiplicationInput(); break;
                 case "/": DivisionInput(); break;
                 case "&": HistoryCalculations(); break;
-                default : LoadMenu(); break;
+                default: LoadMenu(); break;
             }
         }
 
@@ -51,20 +51,89 @@ namespace _03___XUnit_and_Acceptance_testing
             }
         }
 
+        public int NumberInput()
+        {
+            int input = 0;
+            bool isException = false;
+            do
+            {
+                try
+                {
+                    input = int.Parse(Console.ReadLine());
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("OBS! Detta värdet kan ej vara tomt!");
+                    isException = true;
+                }
+
+            } while (isException);
+
+            return input;
+        }
+
+        public List<int> MultipleInputs()
+        {
+            List<int> inputs = new List<int>();
+            bool isDone = false;
+            while (!isDone)
+            {
+                Console.WriteLine("Skriv in ett till värde:");
+                string input = Console.ReadLine();
+                if (int.TryParse(input, out int numberResult))
+                {
+                    inputs.Add(numberResult);
+                }
+                else
+                {
+                    isDone = true;
+                }
+            }
+            return inputs;
+        }
+
         public void AdditionInput()
         {
             Console.WriteLine("Skriv in värdet på den första termen: ");
-            int augend = int.Parse(Console.ReadLine());
-            Console.WriteLine("Skriv in värdet på den andra termen: ");
-            int addend = int.Parse(Console.ReadLine());
-            int sum = calculator.Addition(augend, addend);
-            string result = AdditionResult(augend, addend, sum);
+            int augend = NumberInput();
+            Console.WriteLine("Skriv in värdet på nästa andra termen: ");
+            int addend = NumberInput();
+
+            List<int> addends = new List<int>();
+            addends.Add(addend);
+            addends.AddRange(MultipleInputs());
+
+            int sum = calculator.AdditionMulti(augend, addends.ToArray());
+
+            string result = AdditionMultiResult(augend, addends.ToArray(), sum);
             Output(result);
         }
 
         public string AdditionResult(int augend, int addend, int sum)
         {
             return $"Summan av termerna {augend} och {addend} är {sum}!";
+        }
+
+        public string AdditionMultiResult(int augend, int[] addends, int sum)
+        {
+            if (addends.Length < 2)
+            {
+                return $"Summan av termerna {augend} och {addends[0]} är {sum}!";
+            }
+            string text = $"Summan av termerna {augend}, {addends[0]}";
+            for (int i = 1; i < addends.Length; i++)
+            {
+                if (i != addends.Length-1)
+                {
+                    text += $" ,{addends[i]}";
+                }
+                else
+                {
+                    text += $" och {addends[i]}";
+                }
+            }
+            text += $" är {sum}!";
+            return text;
         }
 
         public void SubtractionInput()
