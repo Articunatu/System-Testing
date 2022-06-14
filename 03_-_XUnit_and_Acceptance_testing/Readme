@@ -62,3 +62,14 @@ The console window writes out the question "Do you want to calculate anything el
 The console window writes out the question "Do you want to calculate anything else?"
 *Write "yes" to continue with the next test, or "no" to close the application
 
+5th Test: See earlier calculations
+*The console window asks what you want to calculate, but this time you only want to see the history of calculations
+*Press the follwing key to open the history: &
+*The console window should print out the following code(if you've completed the 4 prior tests):
+ 21 + 79 = 100
+ 15 - 25 = -10
+ -4 * 8 = -32
+ -95 / -5 = 19
+*Press the ENTER key
+The console window writes out the question "Do you want to calculate anything else?"
+*Write "no" to exit the application
