@@ -13,7 +13,8 @@ namespace xUnit_Tests
         public void Addition_When_Augend_21_And_Addend_79_Then_Sum_100()
         {
             ///Act
-            int sumResult = calculator.Addition(21, 79);
+            int[] addend = new int[1] { 79 };
+            int sumResult = calculator.AdditionMulti(21, addend);
 
             ///Assert
             Assert.Equal(100, sumResult);
@@ -75,6 +76,15 @@ namespace xUnit_Tests
             string actual = app.AdditionResult(3, 7, 10);
 
             Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void MultipleAddition_When_Augend_30_1st_Addend_20_2nd_Addend_10_And_3rd_Addend_5_Then_Sum_65()
+        {
+            int[] addends = new int[3] { 20, 10, 5 };
+            int sumResult = calculator.AdditionMulti(30, addends);
+
+            Assert.Equal(65, sumResult);
         }
     }
 }
