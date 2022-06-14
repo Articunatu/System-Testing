@@ -8,6 +8,8 @@ namespace _03___XUnit_and_Acceptance_testing
     {
         Calculator calculator = new Calculator();
 
+        public int? savedResult = null;
+
         public void Menu()
         {
             Console.WriteLine("Välkommen till miniräknaren för heltal.\n" +
@@ -96,6 +98,7 @@ namespace _03___XUnit_and_Acceptance_testing
         {
             Console.WriteLine("Skriv in värdet på den första termen: ");
             int augend = NumberInput();
+            Console.WriteLine(augend);
             Console.WriteLine("Skriv in värdet på nästa andra termen: ");
             int addend = NumberInput();
 
@@ -196,6 +199,25 @@ namespace _03___XUnit_and_Acceptance_testing
             calculator.History();
             Console.ReadLine();
             LoadMenu();
+        }
+
+        public int ResUseResult()
+        {
+            if (savedResult != null)
+            {
+                Console.WriteLine("Vill du återvända ditt sparade resultat");
+                string answer = Console.ReadLine();
+                if (answer.ToUpper() == "JA")
+                {
+                    return (int)savedResult;
+                }
+            }
+            return 1;
+        }
+
+        public void SaveResult(int result)
+        {
+            savedResult = result;
         }
     }
 }
