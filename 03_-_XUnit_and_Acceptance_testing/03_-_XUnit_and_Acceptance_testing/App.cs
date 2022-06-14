@@ -31,18 +31,16 @@ namespace _03___XUnit_and_Acceptance_testing
                 case "*": MultiplicationInput(); break;
                 case "/": DivisionInput(); break;
                 case "&": HistoryCalculations(); break;
-                default:
-                    Console.WriteLine("Vänligen skriv ett giltigt räknesätt!");
-                    LoadMenu(); break;
+                default : LoadMenu(); break;
             }
         }
 
         public void LoadMenu()
         {
 
-            Console.WriteLine("\nVill du stänga av miniräknaren, skriv NEJ");
+            Console.WriteLine("\nVill du stänga av miniräknaren, skriv JA");
             string answer = Console.ReadLine();
-            if (answer.ToUpper() != "NEJ")
+            if (answer.ToUpper() != "JA")
             {
                 Console.Clear();
                 Menu();
