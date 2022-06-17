@@ -94,6 +94,7 @@ namespace _03___XUnit_and_Acceptance_testing
             return inputs;
         }
 
+        ///Takes multiple inputs
         public void AdditionInput()
         {
             Console.WriteLine("Skriv in värdet på den första termen: ");

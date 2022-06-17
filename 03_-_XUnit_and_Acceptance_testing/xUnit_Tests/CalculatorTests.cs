@@ -79,7 +79,7 @@ namespace xUnit_Tests
         }
 
         [Fact]
-        public void MultipleAddition_When_Augend_30_1st_Addend_20_2nd_Addend_10_And_3rd_Addend_5_Then_Sum_65()
+        public void MultipleAddition_When_Augend_30_And_1st_Addend_20_And_2nd_Addend_10_And_3rd_Addend_5_Then_Sum_65()
         {
             int[] addends = new int[3] { 20, 10, 5 };
             int sumResult = calculator.AdditionMulti(30, addends);
